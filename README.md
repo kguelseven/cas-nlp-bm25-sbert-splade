@@ -19,15 +19,19 @@ How do lexical, dense-neural, and sparse-neural retrieval methods compare on the
 
 - **Dataset:** BEIR / MS MARCO (dev split), 100 queries · 10'000 corpus documents
 - **Methods compared:**
-  - **BM25** — lexical baseline (TF-IDF family)
-  - **SBERT** — dense bi-encoder, cosine similarity over learned embeddings
-  - **SPLADE** — learned sparse retrieval with term expansion via MLM
+  - **BM25** - lexical baseline (TF-IDF family)
+  - **SBERT** - dense bi-encoder, cosine similarity over learned embeddings
+  - **SPLADE** - learned sparse retrieval with term expansion via MLM
 - **Evaluation:** nDCG, MAP, Recall @ k ∈ {1, 3, 5, 10, 100}
 - **Case study:** custom query designed to expose the *vocabulary mismatch problem* (e.g. matching climate/weather or car/automobile) and to inspect SPLADE's expanded terms for explainability.
 
 ## Result in one line
 
 BM25 is fast and transparent but lexical-only; SBERT and SPLADE both bridge the vocabulary gap, with SPLADE adding explainability and inverted-index compatibility.
+
+## Notebook
+
+All implementation details, evaluation results, and the case study are in 📓 [`semantic_search_evaluation.ipynb`](semantic_search_evaluation.ipynb).
 
 ## Running
 
